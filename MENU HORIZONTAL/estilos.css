@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav{
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+}
+
+nav .mobile{
+    /* Para ocultar la version de mobile */
+    display: none;
+}
+
+nav .mobile .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.more button{
+    border: none;
+    background-color: #000;
+    color: #fff;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.collapsed{
+    display: none;
+}
+
+nav .logo{
+    /* Nunca va a ser menor a esta cantidad */
+    min-width: 250px;
+}
+
+nav a{
+    color: #fff;
+    text-decoration: none;
+    /* Para tener todo el espacio coloreado */
+    display: block;
+    padding: 20px 25px;
+}
+
+nav a:hover{
+    cursor: pointer;
+    color: #000;
+    background-color: #00c3ff;
+}
+
+nav .desktop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.primary,
+.secondary{
+    display: flex;
+}
+
+.secondary.mini{
+    display: none;
+}
+
+@media screen and (max-width:853px){
+    nav .logo{
+        min-width: 100px;
+    }
+
+    /* Ocultamos el menu secundario */
+    .full{
+        display: none;
+    }
+
+    /* Mostramos el menu pequeño */
+    nav .secondary.mini{
+        display: block;
+    }
+
+    .submenu{
+        background-color: #000;
+        position: absolute;
+        display: none;
+        width: 200px;
+        /* Para que se pueda hacer grande */
+        right: 0;
+    }
+
+    .secondary.mini:hover .submenu{
+        display: block;
+    }
+
+
+}
+
+@media screen and (max-width: 500px){
+    nav .desktop{
+        display: none;
+    }
+
+    nav .mobile{
+        display: block;
+    }
+}
+
